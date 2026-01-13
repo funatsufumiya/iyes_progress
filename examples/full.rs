@@ -17,8 +17,8 @@
 //! connect to a multiplayer server, etc. The sky is the limit!
 
 use bevy::prelude::*;
-use std::time::Duration;
 use iyes_progress::prelude::*;
+use std::time::Duration;
 
 #[derive(States, Default, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 enum MyStates {
@@ -255,7 +255,6 @@ fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
         .init_state::<MyStates>()
-        // .enable_state_scoped_entities::<MyStates>()
         .add_plugins(
             ProgressPlugin::<MyStates>::new()
                 .with_state_transition(MyStates::Loading, MyStates::Done),
