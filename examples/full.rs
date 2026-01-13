@@ -192,7 +192,7 @@ To progress:
         .spawn((
             BackgroundColor(Color::srgb(0.25, 0.25, 0.25)),
             BorderColor::all(Color::srgb(1.0, 1.0, 1.0)),
-            BorderRadius::all(Val::Px(6.0)),
+            // BorderRadius::all(Val::Px(6.0)),
             Node {
                 position_type: PositionType::Absolute,
                 top: Val::Percent(69.0),
@@ -210,7 +210,7 @@ To progress:
         .spawn((
             BackgroundColor(Color::srgb(0.75, 0.75, 0.75)),
             BorderColor::all(Color::srgb(0.5, 0.5, 0.5)),
-            BorderRadius::all(Val::Px(8.0)),
+            // BorderRadius::all(Val::Px(8.0)),
             Node {
                 height: Val::Percent(100.0),
                 width: Val::Percent(0.0),
@@ -255,6 +255,7 @@ fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
         .init_state::<MyStates>()
+        // .enable_state_scoped_entities::<MyStates>()
         .add_plugins(
             ProgressPlugin::<MyStates>::new()
                 .with_state_transition(MyStates::Loading, MyStates::Done),
